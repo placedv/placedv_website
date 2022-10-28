@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Your default theme */
+    --background: white;
+    --foreground: black;
+}
+
+[data-theme='dark'] {
+    --background: black;
+    --foreground: white;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--background)!important;
+}
+input, select, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+h1, h2, h3, h4, h5, h5, p {margin: 0}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-black {
+    color: var(--foreground);
+}
+.nav-link {
+    color: #adb5bd;
+}
+.nav-link:hover {
+    color: #000000;
+    background-color: #EBECF0;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.link-project > a:hover{
+    color: #0d6efd!important;
+    box-shadow: 0 0 0 1px #0d6efd!important;
+    display: flex;
+    border-radius: 10px;
+}
