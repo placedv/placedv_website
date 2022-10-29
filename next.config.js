@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ['avatars.githubusercontent.com'],
   },
   i18n: {
-    locales: ['en'],
+    locales: ['en', 'it'],
     defaultLocale: 'en',
     localeDetection: true,
   },

@@ -21,17 +21,6 @@ function Modal() {
                     <div className="modal-body">
                         <div className="mb-2">
                             <button
-                                className="container fw-semibold btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center gap-2"
-                                onClick={() => {
-                                    router.push(`/${session.user.name}`).then()
-                                    CloseModalForce()
-                                }}
-                            >
-                                <BiUser size={20}/> Go to {session.user.name} profile
-                            </button>
-                        </div>
-                        <div className="mb-2">
-                            <button
                                 onClick={() => signOut()}
                                 className="container fw-semibold btn btn-outline-secondary btn-lg d-flex align-items-center justify-content-center gap-2"
                             >

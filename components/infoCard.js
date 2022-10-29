@@ -13,11 +13,11 @@ function InfoCard({emoji, title, description}) {
     }, [defaultLocale, locales, setTheme])
     if(!mounted) return null
     return <>
-        <div className="d-flex align-items-center gap-3 text-black mb-4">
+        <div className="d-flex align-items-center gap-3 text-black mb-2">
             <div className="text-primary">
-                <h1>{emoji}</h1>
+                <h1 className={`${darkTheme ? 'text-white' : 'text-black'}`}>{emoji}</h1>
             </div>
-            <h3 className={`fs-2 fw-bold ${darkTheme ? 'text-white' : 'text-black'}`}>
+            <h3 className={`calibre-semibold fs-2 fw-bold ${darkTheme ? 'text-white' : 'text-black'}`}>
                 {enLanguage
                     ? title.en
                     : title.it

@@ -12,10 +12,10 @@ function InfoProject({link, image, title, description}) {
                     <Image className={`rounded-3 ${darkTheme ? null : 'border shadow-sm'}`} src={image} alt="random emoji" width={130} height={80}/>
                 </div>
                 <div>
-                    <h3 className={`mb-1 fs-4 fw-semibold ${darkTheme ? 'text-white ' : 'text-black'}`}>
+                    <h3 className={`calibre-semibold mb-1 fs-3 fw-semibold ${darkTheme ? 'text-white ' : 'text-black'}`}>
                         {title}
                     </h3>
-                    <h6 className="text-secondary">
+                    <h6 className="text-secondary fw-semibold fs-5">
                         {description}
                     </h6>
                 </div>

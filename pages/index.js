@@ -4,13 +4,13 @@ import {useRouter} from "next/router";
 import InfoCard from "../components/infoCard";
 import Layout from "../components/layout";
 import {translation} from "../lib/translation";
-import random_emoji from "../public/random_emoji.png"
 import goofls from "../public/goofls.png"
 import pyramid from "../public/pyramid.png"
 import InfoProject from "../components/infoProject";
 import useSWR from "swr";
 import {fetcher} from "../lib/fetchApi";
 import AvatarProfile from "../components/avatarProfile";
+import {BiCollection, BiFile, BiGroup, BiMapPin, BiRecycle, BiShow, BiWorld} from "react-icons/bi";
 
 function HomePage() {
     const { theme } = useTheme()
@@ -21,25 +21,25 @@ function HomePage() {
     return <Layout title={enLanguage ? '🇬🇧 Placedv' : '🇮🇹 Placedv'}>
         <div className="container m-auto mb-5 pb-5">
             <div className="mt-5">
-                <h1 className="text-primary display-1 fw-bold mb-2 text-opacity-25">
+                <h1 className={`calibre-semibold display-1 fw-bold mb-1 text-opacity-25 ${darkTheme ? 'text-white' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_1.en
                         : translation.call_to_action.phrase_1.it
                     }
                 </h1>
-                <h1 className="text-primary display-1 fw-bold mb-2 text-opacity-50">
+                <h1 className={`calibre-semibold display-1 fw-bold mb-1 text-opacity-50 ${darkTheme ? 'text-white' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_2.en
                         : translation.call_to_action.phrase_2.it
                     }
                 </h1>
-                <h1 className="text-primary display-1 fw-bold mb-2 text-opacity-75">
+                <h1 className={`calibre-semibold display-1 fw-bold mb-1 text-opacity-75 ${darkTheme ? 'text-white' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_3.en
                         : translation.call_to_action.phrase_3.it
                     }
                 </h1>
-                <h1 className="text-primary display-1 fw-bold mb-2">
+                <h1 className={`calibre-semibold display-1 fw-bold ${darkTheme ? 'text-white' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_4.en + ' ' + RandomEmoji()
                         : translation.call_to_action.phrase_4.it + ' ' + RandomEmoji()
@@ -51,40 +51,40 @@ function HomePage() {
             <div className="row mb-5">
                 <div className="col-md-4">
                     <InfoCard
-                        emoji="🚀"
+                        emoji={<BiCollection size={46}/> }
                         title={{
-                            en: 'Projects',
-                            it: 'Progetti'
+                            en: translation.info_cards.card_1.title.en,
+                            it: translation.info_cards.card_1.title.it,
                     }}
                         description={{
-                            en: 'Every day we try to build amazing stuff, contribute to open source and help other devs to solve their problems.',
-                            it: 'Ogni giorno proviamo a creare cose spettacolari, contriubuiamo a progetti open source e aiutiamo altri sviluppatori.'
+                            en: translation.info_cards.card_1.description.en,
+                            it: translation.info_cards.card_1.description.it,
                         }}
                     />
                 </div>
                 <div className="col-md-4">
                     <InfoCard
-                        emoji="🧑🏿‍🤝‍🧑🏽"
+                        emoji={<BiGroup size={46}/> }
                         title={{
-                            en: 'People',
-                            it: 'Chi siamo?'
+                            en: translation.info_cards.card_2.title.en,
+                            it: translation.info_cards.card_2.title.it,
                         }}
                         description={{
-                            en: 'We are more 10 people inside Placedv, all days we try to make the world a better place and create amazing stuff.',
-                            it: 'In Placedv siamo in più di 10 persone, ogni giorno proviamo a rendere il mondo un posto migliore in cui vivere.'
+                            en: translation.info_cards.card_2.description.en,
+                            it: translation.info_cards.card_2.description.it,
                         }}
                     />
                 </div>
                 <div className="col-md-4">
                     <InfoCard
-                        emoji="🙌"
+                        emoji={<BiWorld size={46}/> }
                         title={{
-                            en: 'Community',
-                            it: 'Community'
+                            en: translation.info_cards.card_3.title.en,
+                            it: translation.info_cards.card_3.title.it,
                         }}
                         description={{
-                            en: 'We are around the world, we help each other to build amazing stuff and projects, in order to help other people.',
-                            it: 'Siamo in tutto il mondo, ci aiutiamo l\'una/o con l\'altra/a per costruire progetti fantastici e imparare nuove culture.'
+                            en: translation.info_cards.card_3.description.en,
+                            it: translation.info_cards.card_3.description.it,
                         }}
                     />
                 </div>
@@ -92,27 +92,27 @@ function HomePage() {
             <div className="row">
                 <div className="col-md-4">
                     <InfoCard
-                        emoji="♻️"
+                        emoji={<BiRecycle size={46}/>}
                         title={{
-                            en: 'Sustainability',
-                            it: 'Sostenibilità'
+                            en: translation.info_cards.card_4.title.en,
+                            it: translation.info_cards.card_4.title.it,
                         }}
                         description={{
-                            en: 'Our main goal is to preserve our planet, all the project, where is possible, are carbon neutral zero.',
-                            it: 'Il nostro goal principale è preservare il nostro pianeta, tutti i progetti, dove possibile, sono ad emissioni zero.'
+                            en: translation.info_cards.card_4.description.en,
+                            it: translation.info_cards.card_4.description.it,
                         }}
                     />
                 </div>
                 <div className="col-md-4">
                     <InfoCard
-                        emoji="🌍️"
+                        emoji={<BiShow size={46}/>}
                         title={{
-                            en: 'Goals',
-                            it: 'Goals'
+                            en: translation.info_cards.card_5.title.en,
+                            it: translation.info_cards.card_5.title.it,
                         }}
                         description={{
-                            en: 'We trust in people, and in their power, together we can maintenance a better world for our next generations.',
-                            it: 'Crediamo nelle persone e nel loro potere, insieme possiamo mantenere un mondo migliore per noi e per le generazioni future.'
+                            en: translation.info_cards.card_5.description.en,
+                            it: translation.info_cards.card_5.description.it,
                         }}
                     />
                 </div>
@@ -120,7 +120,7 @@ function HomePage() {
         </div>
         <div className="container p-0 m-auto mb-5 pb-5 row">
             <div className="col-12 mb-5">
-                <h3 className={`mb-1 fs-4 ${darkTheme ? 'text-white' : 'text-black'}`}>
+                <h3 className={`calibre-semibold mb-1 fs-2 ${darkTheme ? 'text-white' : 'text-black'}`}>
                     {enLanguage ? 'Recent projects' : 'Progetti recenti'}
                 </h3>
             </div>
@@ -143,7 +143,7 @@ function HomePage() {
         </div>
         <div className="container m-auto mb-5 pb-5">
             <div className="mb-5">
-                <h3 className={`mb-1 fs-4 ${darkTheme ? 'text-white' : 'text-black'}`}>
+                <h3 className={`calibre-semibold mb-1 fs-2 ${darkTheme ? 'text-white' : 'text-black'}`}>
                     Community
                 </h3>
             </div>
