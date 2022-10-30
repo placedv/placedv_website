@@ -2,8 +2,11 @@ import NavigationBar from "./navigationBar";
 import Footer from "./footer";
 import {useEffect, useState} from "react";
 import Modal from "./modal";
+import {useTheme} from "next-themes";
 
 function Layout({children, title}) {
+    const { theme } = useTheme()
+    const darkTheme = theme === 'dark'
     const [mounted, setMounted] = useState(false)
     useEffect(() => {
         setMounted(true)
