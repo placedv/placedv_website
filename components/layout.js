@@ -13,7 +13,7 @@ function Layout({children, title}) {
         setMounted(true)
     }, [])
     if(!mounted) return null
-    if (process.env.NODE_ENV === "development") return <>
+    if (process.env.NODE_ENV === "production") return <>
         <div className="container m-auto mt-5 pt-5 mb-5 pb-5 text-center">
             <div>
                 <div className="mb-5">
