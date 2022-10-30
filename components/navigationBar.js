@@ -13,10 +13,6 @@ function NavigationBar({title}) {
     const { locale } = useRouter();
     const enLanguage = locale === 'en'
     return <>
-        <Head>
-            <title>{title}</title>
-            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
         <nav class={`sticky-top navbar navbar-expand-lg  ${darkTheme ? 'navbar-dark bg-primary' : 'navbar-dark bg-dark'}`}>
             <div class="container">
                 <Link className="navbar-brand d-inline-block align-text-top" href="/">

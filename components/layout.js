@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import Modal from "./modal";
 import {useTheme} from "next-themes";
 import {BiPlanet} from "react-icons/bi";
+import Head from "next/head";
 
 function Layout({children, title}) {
     const { theme } = useTheme()
@@ -14,6 +15,10 @@ function Layout({children, title}) {
     }, [])
     if(!mounted) return null
     if (process.env.NODE_ENV === "production") return <>
+        <Head>
+            <title>Placedv</title>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <div className="container m-auto mt-5 pt-5 mb-5 pb-5 text-center">
             <div>
                 <div className="mb-5">
@@ -29,6 +34,10 @@ function Layout({children, title}) {
         </div>
     </>
     return <>
+        <Head>
+            <title>{title}</title>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <NavigationBar title={title}/>
         {children}
         <Modal/>
