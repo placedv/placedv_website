@@ -27,9 +27,9 @@ function NavigationBar({title}) {
                     <span class="navbar-toggler-icon"/>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    {/*<ul class="navbar-nav">
+                    <ul class="navbar-nav">
                         <li className="nav-item">
-                            <Link className="simplonmono-regular nav-link" href="/">
+                            <Link className="simplonmono-regular nav-link" href="/projects">
                                 {enLanguage
                                     ? 'Projects'
                                     : 'Progetti'
@@ -50,14 +50,14 @@ function NavigationBar({title}) {
                         <li className="nav-item">
                             <Link className="simplonmono-regular nav-link" href="/">Sponsors</Link>
                         </li>
-                    </ul>*/}
+                    </ul>
                     <ul class="navbar-nav ms-auto">
-                        <li className="nav-item">
+                        {/*<li className="nav-item">
                             {enLanguage
                                 ? <Link className="simplonmono-regular nav-link mt-1" href="/" locale="it">IT</Link>
                                 : <Link className="simplonmono-regular nav-link mt-1" href="/" locale="en">EN</Link>
                             }
-                        </li>
+                        </li>*/}
                         <li className="nav-item">
                             {darkTheme
                                 ? <span className="cursor-pointer simplonmono-regular nav-link" onClick={() => setTheme('light')}>

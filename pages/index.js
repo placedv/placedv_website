@@ -10,7 +10,7 @@ import InfoProject from "../components/infoProject";
 import useSWR from "swr";
 import {fetcher} from "../lib/fetchApi";
 import AvatarProfile from "../components/avatarProfile";
-import {BiCollection, BiFile, BiGroup, BiMapPin, BiRecycle, BiShow, BiWorld} from "react-icons/bi";
+import {BiCollection, BiGroup, BiInfoCircle, BiRecycle} from "react-icons/bi";
 
 function HomePage() {
     const { theme } = useTheme()
@@ -21,19 +21,19 @@ function HomePage() {
     return <Layout title={enLanguage ? '🇬🇧 Placedv' : '🇮🇹 Placedv'}>
         <div className="container m-auto mb-5 pb-5">
             <div className="mt-5">
-                <h1 className={`calibre-semibold display-1 fw-bold mb-1 text-opacity-25 ${darkTheme ? 'text-white' : 'text-primary'}`}>
+                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-25 ${darkTheme ? 'text-white' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_1.en
                         : translation.call_to_action.phrase_1.it
                     }
                 </h1>
-                <h1 className={`calibre-semibold display-1 fw-bold mb-1 text-opacity-50 ${darkTheme ? 'text-white' : 'text-primary'}`}>
+                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-50 ${darkTheme ? 'text-white' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_2.en
                         : translation.call_to_action.phrase_2.it
                     }
                 </h1>
-                <h1 className={`calibre-semibold display-1 fw-bold mb-1 text-opacity-75 ${darkTheme ? 'text-white' : 'text-primary'}`}>
+                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-75 ${darkTheme ? 'text-white' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_3.en
                         : translation.call_to_action.phrase_3.it
@@ -51,7 +51,7 @@ function HomePage() {
             <div className="row mb-5">
                 <div className="col-md-4">
                     <InfoCard
-                        emoji={<BiCollection size={46}/> }
+                        emoji={<BiInfoCircle size={46}/> }
                         title={{
                             en: translation.info_cards.card_1.title.en,
                             it: translation.info_cards.card_1.title.it,
@@ -66,19 +66,6 @@ function HomePage() {
                     <InfoCard
                         emoji={<BiGroup size={46}/> }
                         title={{
-                            en: translation.info_cards.card_2.title.en,
-                            it: translation.info_cards.card_2.title.it,
-                        }}
-                        description={{
-                            en: translation.info_cards.card_2.description.en,
-                            it: translation.info_cards.card_2.description.it,
-                        }}
-                    />
-                </div>
-                <div className="col-md-4">
-                    <InfoCard
-                        emoji={<BiWorld size={46}/> }
-                        title={{
                             en: translation.info_cards.card_3.title.en,
                             it: translation.info_cards.card_3.title.it,
                         }}
@@ -88,8 +75,6 @@ function HomePage() {
                         }}
                     />
                 </div>
-            </div>
-            <div className="row">
                 <div className="col-md-4">
                     <InfoCard
                         emoji={<BiRecycle size={46}/>}
@@ -103,19 +88,6 @@ function HomePage() {
                         }}
                     />
                 </div>
-                <div className="col-md-4">
-                    <InfoCard
-                        emoji={<BiShow size={46}/>}
-                        title={{
-                            en: translation.info_cards.card_5.title.en,
-                            it: translation.info_cards.card_5.title.it,
-                        }}
-                        description={{
-                            en: translation.info_cards.card_5.description.en,
-                            it: translation.info_cards.card_5.description.it,
-                        }}
-                    />
-                </div>
             </div>
         </div>
         <div className="container p-0 m-auto mb-5 pb-5 row">
@@ -126,18 +98,18 @@ function HomePage() {
             </div>
             <div className="col-md-4">
                 <InfoProject
-                    link="https://goofls.sergiocasolari.com"
-                    image={goofls}
-                    title="Goofls"
-                    description={enLanguage ? 'Load FLS faster and securely' : 'Carica contenitori floodlight velocemente e in modo sicuro'}
-                />
-            </div>
-            <div className="col-md-4">
-                <InfoProject
                     link="https://pyramid.placedv.com/"
                     image={pyramid}
                     title="Placedv Pyramid"
                     description={enLanguage ? 'Dashboard for Online Advertising' : 'Dashboard veloce e sicura per Online Advertising'}
+                />
+            </div>
+            <div className="col-md-4">
+                <InfoProject
+                    link="https://goofls.sergiocasolari.com"
+                    image={goofls}
+                    title="Goofls"
+                    description={enLanguage ? 'Load FLS faster and securely' : 'Carica contenitori floodlight velocemente e in modo sicuro'}
                 />
             </div>
         </div>
