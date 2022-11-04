@@ -5,15 +5,21 @@ import {useRouter} from "next/router";
 import {useSession} from "next-auth/react";
 import {Logo} from "./logo";
 import {BiMoon, BiSun} from "react-icons/bi";
+import {useEffect, useState} from "react";
 
-function NavigationBar({title}) {
+function NavigationBar() {
+    const router = useRouter()
     const {data: session} = useSession()
     const { theme, setTheme } = useTheme()
     const darkTheme = theme === 'dark'
     const { locale } = useRouter();
     const enLanguage = locale === 'en'
+    const [path, setPath] = useState('')
+    useEffect(() => {
+        setPath(window.location.pathname)
+    }, [path])
     return <>
-        <nav class={`sticky-top navbar navbar-expand-lg  ${darkTheme ? 'navbar-dark bg-primary' : 'navbar-dark bg-dark'}`}>
+        <nav class={`sticky-top navbar navbar-expand-lg  ${darkTheme ? 'navbar-dark bg-dark' : 'navbar-dark bg-primary'}`}>
             <div class="container">
                 <Link className="navbar-brand d-inline-block align-text-top" href="/">
                     <Logo height={30} width={30} fill={darkTheme ? '#ffffff' : '#ffffff'}/>
@@ -25,7 +31,7 @@ function NavigationBar({title}) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li className="nav-item">
-                            <Link className="simplonmono-regular nav-link" href="/projects">
+                            <Link className={`simplonmono-regular nav-link ${path.includes('/projects') ? 'active' : null}`} href="/projects">
                                 {enLanguage
                                     ? 'Projects'
                                     : 'Progetti'
@@ -33,7 +39,7 @@ function NavigationBar({title}) {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="simplonmono-regular nav-link" href="/">
+                            <Link className={`simplonmono-regular nav-link ${path.includes('/events') ? 'active' : null}`} href="/events">
                                 {enLanguage
                                     ? 'Events'
                                     : 'Eventi'
@@ -41,10 +47,14 @@ function NavigationBar({title}) {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="simplonmono-regular nav-link" href="/">FAQ</Link>
+                            <Link className={`simplonmono-regular nav-link ${path.includes('/faq') ? 'active' : null}`} href="/faq">
+                                FAQ
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="simplonmono-regular nav-link" href="/">Sponsors</Link>
+                            <Link className={`simplonmono-regular nav-link ${path.includes('/sponsors') ? 'active' : null}`} href="/sponsors">
+                                Sponsors
+                            </Link>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
@@ -54,18 +64,18 @@ function NavigationBar({title}) {
                                 : <Link className="simplonmono-regular nav-link mt-1" href="/" locale="en">EN</Link>
                             }
                         </li>*/}
-                        <li className="nav-item">
+                        <li className="nav-item nav-link">
                             {darkTheme
                                 ? <span className="cursor-pointer simplonmono-regular nav-link" onClick={() => setTheme('light')}>
-                                <BiSun size={24} color="#ffffff"/>
-                            </span>
+                                    <BiSun size={24}/>
+                                </span>
                                 : <span className="cursor-pointer simplonmono-regular nav-link" onClick={() => setTheme('dark')}>
-                                <BiMoon size={24} color="#ffffff"/>
-                            </span>
+                                    <BiMoon size={24}/>
+                                </span>
                             }
                         </li>
-                        <li className="nav-item d-flex align-items-center ms-3">
-                            <button className="simplonmono-regular fw-semibold btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <li className="nav-item d-flex align-items-center nav-link">
+                            <button className={`simplonmono-regular fw-semibold btn ${darkTheme ? 'btn-light' : 'btn-light'}`} data-bs-toggle="modal" data-bs-target="#loginModal">
                                 {!session
                                     ? enLanguage
                                         ? 'Login'

@@ -42,7 +42,7 @@ function Modal() {
                         <div className="mb-2">
                             <button
                                 onClick={() => signIn('github')}
-                                className="container fw-semibold btn btn-outline-dark btn-lg d-flex align-items-center justify-content-center gap-2"
+                                className="simplonmono-regular container fw-semibold btn btn-outline-dark btn-lg d-flex align-items-center justify-content-center gap-2"
                             >
                                 <FaGithub size={20}/> {enLanguage ? 'Login with' : 'Accedi con'} GitHub
                             </button>

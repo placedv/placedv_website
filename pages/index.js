@@ -10,7 +10,7 @@ import InfoProject from "../components/infoProject";
 import useSWR from "swr";
 import {fetcher} from "../lib/fetchApi";
 import AvatarProfile from "../components/avatarProfile";
-import {BiCollection, BiGroup, BiInfoCircle, BiRecycle} from "react-icons/bi";
+import {BiGroup, BiInfoCircle, BiRecycle} from "react-icons/bi";
 
 function HomePage() {
     const { theme } = useTheme()
@@ -21,25 +21,25 @@ function HomePage() {
     return <Layout title={enLanguage ? '🇬🇧 Placedv' : '🇮🇹 Placedv'}>
         <div className="container m-auto mb-5 pb-5">
             <div className="mt-5">
-                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-25 ${darkTheme ? 'text-white' : 'text-primary'}`}>
+                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-25 ${darkTheme ? 'text-primary' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_1.en
                         : translation.call_to_action.phrase_1.it
                     }
                 </h1>
-                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-50 ${darkTheme ? 'text-white' : 'text-primary'}`}>
+                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-50 ${darkTheme ? 'text-primary' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_2.en
                         : translation.call_to_action.phrase_2.it
                     }
                 </h1>
-                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-75 ${darkTheme ? 'text-white' : 'text-primary'}`}>
+                <h1 className={`calibre-semibold display-1 fw-bold mb-0 text-opacity-75 ${darkTheme ? 'text-primary' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_3.en
                         : translation.call_to_action.phrase_3.it
                     }
                 </h1>
-                <h1 className={`calibre-semibold display-1 fw-bold ${darkTheme ? 'text-white' : 'text-primary'}`}>
+                <h1 className={`calibre-semibold display-1 fw-bold ${darkTheme ? 'text-primary' : 'text-primary'}`}>
                     {enLanguage
                         ? translation.call_to_action.phrase_4.en + ' ' + RandomEmoji()
                         : translation.call_to_action.phrase_4.it + ' ' + RandomEmoji()

@@ -40,7 +40,7 @@ function Layout({children, title}) {
         </Head>
         <NavigationBar title={title}/>
         {children}
-        <Modal/>
+        <Modal id={''}/>
         <Footer/>
     </>
 }
