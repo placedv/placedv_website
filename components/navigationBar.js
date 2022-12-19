@@ -19,17 +19,25 @@ function NavigationBar() {
         setPath(window.location.pathname)
     }, [path])
     return <>
-        <nav class={`sticky-top navbar navbar-expand-lg  ${darkTheme ? 'navbar-dark bg-dark' : 'navbar-dark bg-primary'}`}>
-            <div class="container">
+        <nav className={`sticky-top navbar navbar-expand-lg mb-5 ${darkTheme ? 'navbar-dark bg-dark' : 'navbar-dark bg-primary'}`}>
+            <div className="container">
                 <Link className="navbar-brand d-inline-block align-text-top" href="/">
                     <Logo height={30} width={30} fill={darkTheme ? '#ffffff' : '#ffffff'}/>
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"/>
+                    <span className="navbar-toggler-icon"/>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        {/*<li className="nav-item">
+                            <Link className={`simplonmono-regular nav-link ${path.includes('/about') ? 'active' : null}`} href="/about">
+                                {enLanguage
+                                    ? 'About'
+                                    : 'About'
+                                }
+                            </Link>
+                        </li>*/}
                         <li className="nav-item">
                             <Link className={`simplonmono-regular nav-link ${path.includes('/projects') ? 'active' : null}`} href="/projects">
                                 {enLanguage
@@ -39,25 +47,12 @@ function NavigationBar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={`simplonmono-regular nav-link ${path.includes('/events') ? 'active' : null}`} href="/events">
-                                {enLanguage
-                                    ? 'Events'
-                                    : 'Eventi'
-                                }
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className={`simplonmono-regular nav-link ${path.includes('/faq') ? 'active' : null}`} href="/faq">
-                                FAQ
-                            </Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className={`simplonmono-regular nav-link ${path.includes('/sponsors') ? 'active' : null}`} href="/sponsors">
                                 Sponsors
                             </Link>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto">
+                    <ul className="navbar-nav ms-auto">
                         {/*<li className="nav-item">
                             {enLanguage
                                 ? <Link className="simplonmono-regular nav-link mt-1" href="/" locale="it">IT</Link>

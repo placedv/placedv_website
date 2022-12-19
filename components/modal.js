@@ -35,14 +35,14 @@ function Modal() {
                             {enLanguage ? 'Login' : 'Accedi'}
                         </h3>
                         <h3 className="text-secondary fs-5">
-                            Start to be a part of this amazing community, we are waiting for you
+                            Facendo click su &quot;Accedi con GitHub&quot;, inizierai da subito a far parte della nostra community.
                         </h3>
                     </div>
                     <div className="modal-body">
                         <div className="mb-2">
                             <button
                                 onClick={() => signIn('github')}
-                                className="simplonmono-regular container fw-semibold btn btn-outline-dark btn-lg d-flex align-items-center justify-content-center gap-2"
+                                className="simplonmono-regular container fw-semibold btn btn-dark btn-lg d-flex align-items-center justify-content-center gap-2"
                             >
                                 <FaGithub size={20}/> {enLanguage ? 'Login with' : 'Accedi con'} GitHub
                             </button>

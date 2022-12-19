@@ -14,65 +14,6 @@
     font-family: 'simplonmono-bold';
     src: url('../fonts/SimplonMono-Bold-WebS.woff2') format('woff2');
 }
-
-* {
-    box-sizing: border-box;
-}
-
-:root {
-    /* Your default theme */
-    --background: white;
-    --foreground: black;
-}
-
-[data-theme='dark'] {
-    --background: black;
-    --foreground: white;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'calibre-regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: var(--background)!important;
-}
-input, select, textarea {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-}
-h1, h2, h3, h4, h5, h5, p {margin: 0}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-.navbar ul li a {
-    font-weight: 600;
-}
-.bg-dark ul li a:hover {
-    color: #ffffff!important;
-}
-.bg-primary ul li a:hover {
-    color: #ffffff!important;
-}
-.text-black {
-    color: var(--foreground);
-}
-.cursor-pointer {
-    cursor: pointer;
-}
-.link-project > a:hover{
-    color: #0d6efd!important;
-    box-shadow: 0 0 0 1px #0d6efd!important;
-    display: flex;
-    border-radius: 10px;
-}
 .calibre-regular {
     font-family: 'calibre-regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
@@ -98,53 +39,92 @@ a {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Your default theme */
+    --background: white;
+    --foreground: black;
+    --border-info-project-hover: #0d6efd;
+    --border-input: #ced4da;
+    --background-input: #ffffff;
+    --border-input-focus: #333333;
+    --border: #EBECF0;
+}
+
+[data-theme='dark'] {
+    --background: black;
+    --foreground: white;
+    --border-info-project-hover: #0d6efd;
+    --border-input: #212529;
+    --background-input: #212529;
+    --border-input-focus: #ffffff;
+    --border: #EBECF0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'calibre-regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--background)!important;
+}
+input, select, textarea, button {
+    font-family: 'calibre-regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+h1, h2, h3, h4, h5, h5, p {margin: 0}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.navbar ul li a {
+    font-weight: 600;
+}
+.bg-dark ul li a:hover {
+    color: #ffffff!important;
+}
+.bg-primary ul li a:hover {
+    color: #ffffff!important;
+}
+.text-black {
+    color: var(--foreground);
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.link-project {
+    box-shadow: 0 0 0 1px var(--border)!important;
+    border-radius: 10px;
+}
+.link-project > a:hover{
+    color: var(--border-info-project-hover)!important;
+    box-shadow: 0 0 0 1px var(--border-info-project-hover)!important;
+    display: flex;
+    border-radius: 10px;
+}
+.form-control {
+    background-color: var(--background-input)!important;
+    border: 1px solid var(--border-input)!important;
+    color: var(--foreground)!important;
+    box-shadow: none!important;
+}
+.form-control:focus {
+    border: 1px solid var(--border-input-focus)!important;
+}
+
+
 @media screen and (max-width: 600px) {
     .navbar {
         background-color: #000000!important;
         height: auto!important;
     }
-}
-
-.container-blog {
-    width: 800px;
-    margin: auto;
-}
-.markdown {}
-.markdown p,
-.markdown ul,
-.markdown ol,
-.markdown blockquote {
-    font-size: 18px;
-    font-weight: 500;
-    color: rgba(0, 0, 0, .85);
-    margin-top: 0;
-    margin-bottom: 16px;
-    line-height: 1.65;
-    letter-spacing: 0.1px;
-}
-
-.markdown h2 {
-    @apply text-3xl mt-12 mb-4 leading-snug;
-}
-
-.markdown h3 {
-    @apply text-2xl mt-8 mb-4 leading-snug;
-}
-.markdown pre {
-    margin-top: 0;
-    margin-bottom: 24px;
-    padding: 12px;
-    font-size: 1em;
-    background: #f7f7f7;
-    border-radius: 2px;
-    overflow-x: auto;
-    font-family: monospace, monospace !important;
-}
-.markdown code {
-    border-radius: 2px;
-    background: #f7f7f7;
-    padding: 0 5px;
-}
-.markdown h1, h2, h3 {
-    margin: 8px 0 16px 0;
 }

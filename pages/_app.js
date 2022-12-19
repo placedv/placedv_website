@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react"
 
 function MyApp({ Component, pageProps }) {
     return <SessionProvider>
-        <ThemeProvider enableSystem={false}>
+        <ThemeProvider enableSystem={false} disableTransitionOnChange>
             <Component {...pageProps} />
         </ThemeProvider>
     </SessionProvider>

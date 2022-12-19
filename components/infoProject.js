@@ -7,15 +7,12 @@ function InfoProject({link, image, title, description}) {
     const darkTheme = theme === 'dark'
     return <div className="col link-project">
         <Link href={link} target="_blank">
-            <div className="d-flex align-items-center gap-3 p-2">
-                <div>
-                    <Image className={`rounded-3 ${darkTheme ? null : 'border shadow-sm'}`} src={image} alt="random emoji" width={130} height={80}/>
-                </div>
+            <div className="d-flex align-items-center gap-3 p-3 border-1 border-light">
                 <div>
                     <h3 className={`calibre-semibold mb-1 fs-3 fw-semibold ${darkTheme ? 'text-white ' : 'text-black'}`}>
                         {title}
                     </h3>
-                    <h6 className="text-secondary fw-semibold fs-5">
+                    <h6 className="text-secondary fw-semibold fs-5 mb-0">
                         {description}
                     </h6>
                 </div>
