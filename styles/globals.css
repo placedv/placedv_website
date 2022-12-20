@@ -61,14 +61,14 @@
     --border-input: #212529;
     --background-input: #212529;
     --border-input-focus: #ffffff;
-    --border: #EBECF0;
+    --border: #212529;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'calibre-regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -86,8 +86,28 @@ a {
     color: inherit;
     text-decoration: none;
 }
+.navbar ul {
+    display: flex;
+    gap: 5px;
+}
 .navbar ul li a {
-    font-weight: 600;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.navbar, .navbar-light ul li a:hover {
+    background-color: #e9ecef;
+}
+.navbar, .navbar-dark ul li a:hover {
+    background-color: #212529;
+}
+.navbar-light .show > .nav-link, .navbar-light .nav-link.active {
+    color: var(--bs-navbar-active-color);
+    background-color: #e9ecef;
+}
+.navbar-dark .show > .nav-link, .navbar-dark .nav-link.active {
+    color: var(--bs-navbar-active-color);
+    background-color: #212529;
 }
 .bg-dark ul li a:hover {
     color: #ffffff!important;
@@ -107,7 +127,7 @@ a {
 }
 .link-project > a:hover{
     color: var(--border-info-project-hover)!important;
-    box-shadow: 0 0 0 1px var(--border-info-project-hover)!important;
+    box-shadow: 0 0 0 2px var(--border-info-project-hover)!important;
     display: flex;
     border-radius: 10px;
 }
@@ -119,6 +139,9 @@ a {
 }
 .form-control:focus {
     border: 1px solid var(--border-input-focus)!important;
+}
+.shadow-navbar {
+    transition-duration: 0.3s;
 }
 
 

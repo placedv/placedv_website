@@ -2,13 +2,10 @@ import NavigationBar from "./navigationBar";
 import Footer from "./footer";
 import {useEffect, useState} from "react";
 import Modal from "./modal";
-import {useTheme} from "next-themes";
-import {BiPlanet} from "react-icons/bi";
 import Head from "next/head";
+import BannerUp from "./bannerUp";
 
 function Layout({children, title}) {
-    const { theme } = useTheme()
-    const darkTheme = theme === 'dark'
     const [mounted, setMounted] = useState(false)
     useEffect(() => {
         setMounted(true)

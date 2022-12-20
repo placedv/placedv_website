@@ -17,7 +17,7 @@ function InfoCard({emoji, title, description}) {
             <div className="text-primary">
                 <h1 className={`${darkTheme ? 'text-white' : 'text-black'}`}>{emoji}</h1>
             </div>
-            <h3 className={`calibre-semibold fs-2 fw-bold ${darkTheme ? 'text-white' : 'text-black'}`}>
+            <h3 className={`fs-2 fw-bold ${darkTheme ? 'text-white' : 'text-black'}`}>
                 {enLanguage
                     ? title.en
                     : title.it
@@ -25,7 +25,7 @@ function InfoCard({emoji, title, description}) {
             </h3>
         </div>
         <div>
-            <p className="text-secondary fw-semibold fs-4">
+            <p className="text-secondary fs-3">
                 {enLanguage
                     ? description.en
                     : description.it
